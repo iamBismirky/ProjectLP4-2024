@@ -1,0 +1,84 @@
+﻿@rendermode InteractiveServer
+@using Microsoft.AspNetCore.Authorization
+
+@page "/Listado Vehiculos"
+
+<h3>Listado Vehiculos</h3>
+<span class="btn btn-primary" @onclick="btnAgregarVehiculo">+</span>
+
+@*Formulario de registrar vehiculo*@
+@if (ShowForm==true)
+{
+    <div class="mb-3 mt-3">
+        <h4>Registrar Vehiculo</h4>
+        <div class="form-floating">
+            <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea"></textarea>
+            <label for="floatingTextarea">Marca</label>
+        </div>
+        <div class="form-floating">
+            <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea"></textarea>
+            <label for="floatingTextarea">Modelo</label>
+        </div>
+        <div class="form-floating">
+            <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea"></textarea>
+            <label for="floatingTextarea">Matricula</label>
+        </div>
+        <div class="form-floating">
+            <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea"></textarea>
+            <label for="floatingTextarea">Numero de Placa</label>
+        </div>
+        <div class="form-floating">
+            <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea"></textarea>
+            <label for="floatingTextarea">Tipo</label>
+        </div>
+        <div class="form-floating">
+            <select class="form-select" id="floatingSelect" aria-label="Floating label select example">
+                <option selected>Disponible</option>
+                <option value="2">Ocupado</option>
+                <option value="3">Mantenimiento</option>
+            </select>
+            <label for="floatingSelect">Estatus</label>
+        </div>
+        <div class="mb-3 mt-3">
+            <span class="btn btn-primary">Agregar</span>
+            <span class="btn btn-danger" @onclick="btnCancelar">Cancelar</span>
+        </div>
+    </div>
+   
+}
+else
+{
+    @*Tarjeta de vehiculo*@
+    <div class="mb-3 mt-3 ">
+        <div class="card mb-3" style="width: 18rem;">
+            <div class="card-body">
+                <h5 class="card-title">@Marca</h5>
+                <p class="card-text">@Modelo</p>
+                <a href="#" class="btn btn-primary">Rentar</a>
+            </div>
+        </div>
+    </div>
+}
+
+@code {
+    bool ShowForm = false;
+    string Marca = "";
+    string Modelo = "";
+    string Tipo = "";
+    string Estatus = "";
+
+
+    public void btnAgregarVehiculo()
+    {
+        ShowForm = true;
+    }
+    public void btnCancelar()
+    {
+        ShowForm = false;
+    }
+    public void btnGuardarVehiculo()
+    {
+        
+        ShowForm = false;
+    }
+}
