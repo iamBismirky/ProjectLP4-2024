@@ -30,7 +30,7 @@ public class Result<T> : Result
 		Succesd = true,
 		Message = message
 	};
-	public static Result<T> Failure(string message)
+	public static new Result<T> Failure(string message)
 	=> new()
 	{
 		Message = message
@@ -46,7 +46,7 @@ public class ResultList<T> : Result
 		Succesd = true,
 		Message = message
 	};
-	public static ResultList<T> Failure(string message)
+	public static new ResultList<T> Failure(string message)
 	=> new()
 	{
 		Message = message

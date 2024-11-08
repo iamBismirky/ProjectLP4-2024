@@ -1,6 +1,6 @@
 ﻿namespace ProjectBlazor.Dto;
 
-public class VehiculoDto(int VehiculoId, string? Marca, string? Modelo, string? Matricula, string? NumeroPlaca, string? Tipo, string? Estatus, decimal Precio = 0)
+public class VehiculoDto(int VehiculoId, string Marca, string? Modelo, string? Matricula, string? NumeroPlaca, string? Tipo, string? Estatus, decimal Precio = 0)
 {
 	//public int VehiculoId { get; set; }
 	//public string Marca { get; set; }
@@ -29,7 +29,7 @@ public class VehiculoDto(int VehiculoId, string? Marca, string? Modelo, string? 
 public class VehiculoRequest
 {
 	public int VehiculoId { get; set; } = 0;
-	public string? Marca { get; set; } = null;
+	public string Marca { get; set; } = "";
 	public string? Modelo { get; set; } = null;
 	public string? Matricula { get; set; } = null;
 	public string? NumeroPlaca { get; set; } = null;

@@ -10,7 +10,7 @@ public class Vehiculo
 {
 	[Key]
 	public int VehiculoId { get; set; }
-	public string? Marca { get; set; }
+	public string Marca { get; set; } = "";
 	public string? Modelo { get; set; }
 	public string? Matricula { get; set; }
 	public string? NumeroPlaca { get; set; }
@@ -20,7 +20,7 @@ public class Vehiculo
 	public decimal Precio { get; set; } = 0;
 
 
-	public static Vehiculo Create(string? marca, string? modelo, string? matricula, string? numeroPlaca, string? tipo, string? estatus, decimal precio = 0)
+	public static Vehiculo Create(string marca, string? modelo, string? matricula, string? numeroPlaca, string? tipo, string? estatus, decimal precio = 0)
 		=> new()
 		{
 			Marca = marca,
@@ -31,7 +31,7 @@ public class Vehiculo
 			Estatus = estatus,
 			Precio = precio
 		};
-	public bool Update(string? marca, string? modelo, string? matricula, string? numeroPlaca, string? tipo, string? estatus, decimal precio = 0)
+	public bool Update(string marca, string? modelo, string? matricula, string? numeroPlaca, string? tipo, string? estatus, decimal precio = 0)
 	{
 		var save = false;
 		if (Marca != marca)
