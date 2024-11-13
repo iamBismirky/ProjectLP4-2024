@@ -4,6 +4,7 @@ using Microsoft.EntityFrameworkCore;
 using ProjectBlazor.Components;
 using ProjectBlazor.Components.Account;
 using ProjectBlazor.Data;
+using ProjectBlazor.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -36,6 +37,8 @@ builder.Services.AddIdentityCore<ApplicationUser>(options => options.SignIn.Requ
     .AddDefaultTokenProviders();
 
 builder.Services.AddSingleton<IEmailSender<ApplicationUser>, IdentityNoOpEmailSender>();
+builder.Services.AddScoped<IApplicationDbContext, ApplicationDbContext>();
+builder.Services.AddScoped<IVehiculoService, VehiculoService>();
 
 var app = builder.Build();
 

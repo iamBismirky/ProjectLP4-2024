@@ -4,7 +4,7 @@ using ProjectBlazor.Entities;
 
 namespace ProjectBlazor.Data
 {
-    public class ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) : IdentityDbContext<ApplicationUser>(options)
+    public class ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) : IdentityDbContext<ApplicationUser>(options), IApplicationDbContext
     {
 		public DbSet<Vehiculo> Vehiculos { get; set; }
 		public override Task<int> SaveChangesAsync(CancellationToken cancellationToken = default)

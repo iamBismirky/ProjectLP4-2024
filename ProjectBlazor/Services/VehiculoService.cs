@@ -103,6 +103,7 @@ namespace ProjectBlazor.Services
 				return ResultList<VehiculoDto>.Failure($"☠️ Error: {Ex.Message}");
 			}
 		}
-	}
+        
+    }
 
 }
